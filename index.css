@@ -1,0 +1,86 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.faq {
+  width: 90%;
+  max-width: 960px;
+  padding: 20px;
+}
+
+.faq h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.faq-list {
+  list-style: none;
+  padding: 0;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+}
+
+.faq-item-title a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+}
+
+.faq-item-title a::before {
+  content: "> ";
+  color: red;
+  font-weight: bold;
+}
+
+.faq-item-text {
+  font-size: 14px;
+  color: black;
+  margin-top: 10px;
+  display: none;
+  /* Ocultar todas las respuestas por defecto */
+}
+
+/* Mostrar respuesta si el hash en la URL coincide */
+.faq-item:target .faq-item-text {
+  display: block;
+}
+
+/* Responsividad */
+
+/* Móviles (hasta 375px) */
+@media (max-width: 375px) {
+  .faq {
+    max-width: 375px;
+  }
+
+  /* Ocultar las respuestas en móviles */
+  .faq-item-text {
+    display: none;
+  }
+}
+
+/* Tablets (entre 376px y 960px) */
+@media (min-width: 376px) and (max-width: 960px) {
+  .faq {
+    max-width: 600px;
+  }
+}
+
+/* Escritorio (más de 960px) */
+@media (min-width: 961px) {
+  .faq {
+    max-width: 960px;
+  }
+}
